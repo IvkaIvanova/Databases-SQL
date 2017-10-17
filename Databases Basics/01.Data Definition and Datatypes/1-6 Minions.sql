@@ -1,0 +1,40 @@
+CREATE TABLE Minions(
+Id INT NOT NULL,
+Name VARCHAR(30) NOT NULL,
+Age INT NOT NULL,
+CONSTRAINT PK_Minions PRIMARY KEY(Id)
+)
+
+CREATE TABLE Towns(
+Id INT NOT NULL,
+Name VARCHAR(30) NOT NULL,
+CONSTRAINT PK_Towns PRIMARY KEY(Id)
+)
+
+ALTER TABLE Minions 
+ADD CONSTRAINT FK_Town FOREIGN KEY (TownId)
+REFERENCES Towns (Id)
+
+INSERT INTO Towns(Id,Name)
+VAlUES (1,'Gosho')
+
+INSERT INTO Towns(Id,Name)
+VAlUES (2,'Mishto')
+
+INSERT INTO Towns(Id,Name)
+VAlUES (3,'Bho')
+
+INSERT INTO Minions(Id,Name,Age, TownId)
+VAlUES (1,'Gosh',2,1)
+
+
+INSERT INTO Minions(Id,Name,Age, TownId)
+VAlUES (2,'Dio',3,2)
+
+
+INSERT INTO Minions(Id,Name,Age, TownId)
+VAlUES (3,'Tio',7,3)
+
+TRUNCATE TABLE Minions
+DROP TABLE Minions
+DROP TABLE Towns
