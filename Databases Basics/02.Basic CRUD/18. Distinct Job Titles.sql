@@ -1,0 +1,1 @@
+SELECT DIStinct JobTitle FROM Employees
